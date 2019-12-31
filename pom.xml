@@ -10,7 +10,7 @@
     <groupId>org.jahia.modules</groupId>
     <artifactId>healthcheck-modules-state</artifactId>
     <name>healthcheck-modules-state</name>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <description>This is the custom module (healthcheck-modules-state) for running on a Digital Experience Manager server.</description>
 
@@ -18,7 +18,7 @@
         <connection>scm:git:git@github.com:Jahia/healthcheck-modules-state.git</connection>
         <url>scm:git:git@github.com:Jahia/healthcheck-modules-state.git</url>
         <developerConnection>scm:git:git@github.com:Jahia/healthcheck-modules-state.git</developerConnection>
-        <tag>1_0_0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <repositories>
