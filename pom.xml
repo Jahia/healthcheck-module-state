@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.jahia.modules</groupId>
+        <artifactId>jahia-modules</artifactId>
+        <version>7.2.2.0</version>
+        <relativePath />
+    </parent>
+    <groupId>org.jahia.modules</groupId>
+    <artifactId>healthcheck-modules-state</artifactId>
+    <name>healthcheck-modules-state</name>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+    <description>This is the custom module (healthcheck-modules-state) for running on a Digital Experience Manager server.</description>
+
+    <scm>
+        <connection>scm:git:git@github.com:Jahia/healthcheck-modules-state.git</connection>
+        <url>scm:git:git@github.com:Jahia/healthcheck-modules-state.git</url>
+        <developerConnection>scm:git:git@github.com:Jahia/healthcheck-modules-state.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <repositories>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>jahia-public</id>
+            <name>Jahia Public Repository</name>
+            <url>https://devtools.jahia.com/nexus/content/groups/public</url>
+        </repository>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>jahia-enterprise</id>
+            <name>Jahia Enterprise Repository</name>
+            <url>https://devtools.jahia.com/nexus/content/groups/enterprise</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jahia.modules</groupId>
+            <artifactId>healthcheck</artifactId>
+            <version>[1.0,2.0]</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+
+    <properties>
+        <jahia-depends>default,healthcheck</jahia-depends>
+        <jahia-module-type>system</jahia-module-type>
+        <import-package>org.jahia.modules.healthcheck.interfaces, ${jahia.plugin.projectPackageImport}, *</import-package>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Jahia-Depends>default, healthcheck</Jahia-Depends>
+                        <Jahia-Required-Version>7.3.0.0</Jahia-Required-Version>
+                        <_dsannotations>*</_dsannotations>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
